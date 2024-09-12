@@ -12,6 +12,11 @@ const Header = () => {
       </div>
       <nav>
         <ul className="flex space-x-4">
+        <li>
+            <a href="#home" className="hover:underline">
+              Página principal
+            </a>
+          </li>
           <li>
             <a href="#about" className="hover:underline">
               Sobre Nós
