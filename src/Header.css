@@ -1,0 +1,42 @@
+/* src/Header.css */
+.header {
+  background-color: #1e3a8a; /* Azul escuro */
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.header img {
+  height: 40px; /* Tamanho da logo */
+  margin-right: 0.75rem;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.header nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header nav ul li {
+  margin-left: 1rem;
+}
+
+.header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.header nav ul li a:hover {
+  color: #60a5fa; /* Azul claro no hover */
+}

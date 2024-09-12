@@ -1,0 +1,17 @@
+/* src/Footer.css */
+.footer {
+  background-color: #1f2937; /* Cinza escuro */
+  color: #d1d5db; /* Cinza claro */
+  padding: 1rem 2rem;
+  text-align: center;
+  font-size: 0.875rem; /* Tamanho menor para o texto */
+  border-top: 1px solid #374151; /* Linha sutil no topo */
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer p:hover {
+  color: #9ca3af; /* Mudança de cor suave no hover */
+}

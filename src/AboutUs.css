@@ -1,0 +1,35 @@
+/* src/AboutUs.css */
+.about-us-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #1e3a8a; /* Azul escuro */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.company-photo {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #374151; /* Cinza escuro */
+  text-align: justify;
+  padding: 0 1rem;
+}
