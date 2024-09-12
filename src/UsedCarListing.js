@@ -61,14 +61,93 @@ const UsedCarListing = () => {
       (location === "" ||
         car.location.toLowerCase().includes(location.toLowerCase())) &&
       (carName === "" ||
-        `${car.brand} ${car.model}`.toLowerCase().includes(carName.toLowerCase()))
+        `${car.brand} ${car.model}`
+          .toLowerCase()
+          .includes(carName.toLowerCase()))
   );
 
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold mb-8 text-center">Used Car Listings</h1>
 
-      {/* Restante dos filtros */}
+      <div className="mb-8 bg-gray-100 p-6 rounded-lg shadow-md">
+        <h2 className="text-2xl font-semibold mb-4">Filter Options</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Price Range
+            </label>
+            <input
+              type="range"
+              min="0"
+              max="100000"
+              step="1000"
+              value={priceRange[1]}
+              onChange={(e) => setPriceRange([0, parseInt(e.target.value)])}
+              className="w-full"
+            />
+            <div className="text-sm text-gray-600 mt-1">
+              ${priceRange[0]} - ${priceRange[1]}
+            </div>
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Max Mileage
+            </label>
+            <input
+              type="range"
+              min="0"
+              max="200000"
+              step="10000"
+              value={mileage}
+              onChange={(e) => setMileage(parseInt(e.target.value))}
+              className="w-full"
+            />
+            <div className="text-sm text-gray-600 mt-1">
+              {mileage.toLocaleString()} miles
+            </div>
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Min Year
+            </label>
+            <input
+              type="range"
+              min="2000"
+              max="2023"
+              step="1"
+              value={year}
+              onChange={(e) => setYear(parseInt(e.target.value))}
+              className="w-full"
+            />
+            <div className="text-sm text-gray-600 mt-1">{year}</div>
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Location
+            </label>
+            <input
+              type="text"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+              placeholder="Enter city or state"
+              className="w-full p-2 border rounded"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Car Name
+            </label>
+            <input
+              type="text"
+              value={carName}
+              onChange={(e) => setCarName(e.target.value)}
+              placeholder="Enter car name"
+              className="w-full p-2 border rounded"
+            />
+          </div>
+        </div>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredCars.map((car) => (
@@ -87,7 +166,22 @@ const UsedCarListing = () => {
               <h2 className="text-xl font-semibold mb-2">
                 {car.brand} {car.model}
               </h2>
-              {/* Restante dos detalhes do carro */}
+              <div className="flex items-center mb-2">
+                <FaCalendarAlt className="text-gray-500 mr-2" />
+                <span>{car.year}</span>
+              </div>
+              <div className="flex items-center mb-2">
+                <FaDollarSign className="text-gray-500 mr-2" />
+                <span>${car.price.toLocaleString()}</span>
+              </div>
+              <div className="flex items-center mb-2">
+                <FaRoad className="text-gray-500 mr-2" />
+                <span>{car.mileage.toLocaleString()} miles</span>
+              </div>
+              <div className="flex items-center mb-4">
+                <FaMapMarkerAlt className="text-gray-500 mr-2" />
+                <span>{car.location}</span>
+              </div>
               <div className="flex justify-between">
                 <button
                   onClick={() => navigate(`/vehicle-details/${car.id}`)} // Navegação para VeichleDetails
