@@ -6,6 +6,7 @@ import MechanicAI from "./MechanicAI"; // Importar o componente MechanicAI
 import VeichleDetails from "./VeichleDetails"; // Importar o componente VeichleDetails
 import Header from "./Header";
 import Footer from "./Footer";
+import AboutPage from './AboutPage'; // Página sobre nós
 import "./App.css";
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/" element={<UsedCarListing />} />
         <Route path="/mechanic-opinion/:carId" element={<MechanicAI />} />
         <Route path="/vehicle-details/:carId" element={<VeichleDetails />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
       <Footer />
     </div>

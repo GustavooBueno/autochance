@@ -2,8 +2,9 @@
 import React from 'react';
 import './Header.css';
 import logo from './favicon.ico'; // Importação da logo
+import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Header = () => {  
   return (
     <header className="header bg-blue-600 text-white p-4 flex justify-between items-center">
       <div className="flex items-center">
@@ -11,21 +12,16 @@ const Header = () => {
         <h1 className="text-xl font-bold">AutoChance</h1>
       </div>
       <nav>
-        <ul className="flex space-x-4">
-        <li>
-            <a href="#home" className="hover:underline">
+      <ul className="flex space-x-4">
+          <li>
+            <Link to="/" className="hover:underline">
               Página principal
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#about" className="hover:underline">
+            <Link to="/about" className="hover:underline">
               Sobre Nós
-            </a>
-          </li>
-          <li>
-            <a href="#contact" className="hover:underline">
-              Entre em Contato
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
